@@ -1,0 +1,54 @@
+// Include truYum form validation functions here
+function nameValidation(){
+	var val=document.getElementById('name').value;
+                var regex=/^[_A-z]*((-|\s)*[_A-z])*$/g;
+                var isValid=regex.test(val);
+                var msg="";
+                if(val=="" || val== null){
+                   msg="Title is required.";
+                }
+                else if(val.length<2 || val.length>65){
+                    msg="Title should have 2 to 65 characters.";
+                }
+                else{
+                    msg="";
+                    c=0;
+                }
+                
+                document.getElementById("name-validation").innerHTML=msg;
+}
+function dateOfLaunch(){
+	
+}
+function validate(){
+	
+	var val=document.getElementById('price').value;
+	var regex=/^[0-9]*$/g;
+                var isValid=regex.test(val);
+                var msg="";
+                if(val=="" || val== null){
+                    msg="Price is required.&emsp;&emsp;&emsp;&ensp;&ensp;";
+                }
+                else if(isValid==false){
+                    msg="Price has to be a number.";
+                }
+                else{
+                    msg="";
+                    c=0;
+                }
+                
+                document.getElementById("price-validation").innerHTML=msg;
+	val=document.getElementById('dateOfLaunch').value;
+	msg="";
+	if(val=="" || val== null){
+	   msg="Date of Launch is required.";
+	}
+	document.getElementById("date-of-launch-validation").innerHTML=msg;
+	var val=document.getElementById('category').value;
+	var msg="";
+	if(val=="" || val== null){
+	   msg="Select one category";
+	}
+	document.getElementById("category-validation").innerHTML=msg;
+	event.preventDefault();
+}
